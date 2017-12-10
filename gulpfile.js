@@ -4,6 +4,7 @@ const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
 
 const del = require('del');
 
@@ -12,6 +13,10 @@ const browserSync = require('browser-sync').create();
 const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
+
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+const cache = require('gulp-cache');
 
 const paths = {
     root: './build',
@@ -22,7 +27,7 @@ const paths = {
     styles: {
         src: 'src/styles/**/*.scss',
         dest: 'build/assets/styles/'
-    },    
+    },
     images: {
         src: 'src/images/**/*.*',
         dest: 'build/assets/images/'
@@ -40,13 +45,14 @@ function templates() {
         .pipe(gulp.dest(paths.root));
 }
 
-// scss
+// перевод из scss в css + префиксы и минимизация
 function styles() {
     return gulp.src('./src/styles/app.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(sourcemaps.write())
-        .pipe(rename({suffix: '.min'}))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(paths.styles.dest))
 }
 
@@ -58,7 +64,7 @@ function clean() {
 // webpack
 function scripts() {
     return gulp.src('src/scripts/app.js')
-        .pipe(gulpWebpack(webpackConfig, webpack)) 
+        .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.scripts.dest));
 }
 
@@ -78,9 +84,15 @@ function server() {
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
 
-// просто переносим картинки
+// ужимаем и переносим картинки
 function images() {
     return gulp.src(paths.images.src)
+        .pipe(cache(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }],
+            use: [pngquant()]
+        })))
         .pipe(gulp.dest(paths.images.dest));
 }
 
