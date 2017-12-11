@@ -18,6 +18,8 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const cache = require('gulp-cache');
 
+const spritesmith = require('gulp.spritesmith');
+
 const paths = {
     root: './build',
     templates: {
@@ -35,6 +37,14 @@ const paths = {
     scripts: {
         src: 'src/scripts/**/*.js',
         dest: 'build/assets/scripts/'
+    },
+    fonts: {
+        src: 'src/fonts/**/*.*',
+        dest: 'build/assets/fonts'
+    },
+    sprite: {
+        src: 'src/sprites/**/*.png',
+        dest: 'build/assets/sprites'
     }
 }
 
@@ -96,6 +106,23 @@ function images() {
         .pipe(gulp.dest(paths.images.dest));
 }
 
+//переносим шрифты
+
+function fonts() {
+    return gulp.src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dest));
+}
+
+function sprite() {
+    return gulp.src(paths.sprite.src)
+        .pipe(spritesmith({
+            imgName: 'sprite.png',
+            cssName: 'sprite.css'
+        }))
+        .pipe(gulp.dest(paths.sprite.dest));
+}
+
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
@@ -103,6 +130,6 @@ exports.images = images;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, scripts),
+    gulp.parallel(styles, templates, images, sprite, fonts, scripts),
     gulp.parallel(watch, server)
 ));
