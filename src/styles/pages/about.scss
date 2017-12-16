@@ -1,0 +1,100 @@
+.header {
+    background: url('../images/mountains_about.png') center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: rem(600px);
+}
+
+.hamburger {
+    width: rem(40px);
+    height: rem(35px);
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__socials {
+    display: flex;
+    align-items: center;
+    margin-left: rem(30px);
+    margin-top: rem(16px);
+}
+
+.socials__item {
+    margin-right: rem(30px);
+}
+
+.about__hamburger {
+    align-self: right;
+    margin-top: rem(28px);
+    margin-right: rem(30px);
+}
+
+.header__person {
+    margin-top: rem(90px);
+    text-align: center;
+    background: url("../images/portfolio_header.png") center center no-repeat;
+    background-size: contain;
+    margin-bottom: rem(135px);
+    .person__name {
+        color: white;
+    }
+    .person__desc {
+        color: white;
+        font-family: 'Roboto Light', Arial, Helvetica, sans-serif;
+    }
+}
+
+.header__scroll {
+    display: flex;
+    justify-content: center;
+}
+
+.arrow__down {
+    width: rem(26px);
+    height: rem(16px);
+    opacity: 0.7;
+}
+
+.about__content {
+    display: flex;
+}
+
+.about__person {
+    width: 50%;
+    display: flex;
+    background-color: #efeee9;
+}
+
+.about__heading {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
+    font-size: rem(34px);
+    color: $darkheading;
+}
+
+.about__desc {
+    width: 50%;
+    margin-right: rem(20px);
+}
+
+.about__heading-desc {
+    font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
+    font-size: rem(30px);
+    color: $greyheading;
+    text-align: center;
+}
+
+.about__text {
+    color: $darkolive;
+    font-family: 'Roboto Regular', Arial, Helvetica, sans-serif;
+}
+
+.about__skills {
+    width: 50%;
+    background-color: #eeebdf;
+}

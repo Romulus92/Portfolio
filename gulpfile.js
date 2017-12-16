@@ -19,6 +19,7 @@ const pngquant = require('imagemin-pngquant');
 const cache = require('gulp-cache');
 
 const spritesmith = require('gulp.spritesmith');
+const svgSprite = require('gulp-svg-sprite');
 
 const paths = {
     root: './build',
@@ -45,6 +46,10 @@ const paths = {
     sprite: {
         src: 'src/sprites/**/*.png',
         dest: 'build/assets/sprites'
+    },
+    svgsprite: {
+        src: 'src/svg/*.svg',
+        dest: 'build/assets/svg'
     }
 }
 
@@ -57,9 +62,12 @@ function templates() {
 
 // перевод из scss в css + префиксы и минимизация
 function styles() {
-    return gulp.src('./src/styles/app.scss')
+    return gulp.src('./src/styles/main.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(sass({
+            outputStyle: 'compressed',
+            includePaths: require('node-normalize-scss').includePaths
+        }))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(sourcemaps.write())
         .pipe(rename({ suffix: '.min' }))
@@ -122,6 +130,20 @@ function sprite() {
         .pipe(gulp.dest(paths.sprite.dest));
 }
 
+function spritessvg() {
+    return gulp.src(paths.svgsprite.src)
+        .pipe(svgSprite(
+            config = {
+                mode: {
+                    css: true,
+                    inline: true,
+                    symbol: true
+                }
+            }
+        ))
+        .pipe(gulp.dest(paths.svgsprite.dest));
+}
+
 
 exports.templates = templates;
 exports.styles = styles;
@@ -130,6 +152,6 @@ exports.images = images;
 
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, sprite, fonts, scripts),
+    gulp.parallel(styles, templates, images, sprite, spritessvg, fonts, scripts),
     gulp.parallel(watch, server)
 ));

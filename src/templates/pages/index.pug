@@ -1,13 +1,24 @@
 extends ../template
 
 block variables
-    - var title = 'Добро пожаловать'
+  - var title = 'Портфолио разработчика'
 
 block content
-    h1 Главная
-    form
-        label(for="email") email
-        input(name="email" id="email")
-        label(for="password") password
-        input(name="password" id="password")
-        button Войти
+  .welcome__wrapper
+    .welcome__auto
+      a.welcome__button(href="login.html")
+        span.welcome__button-text Авторизоваться
+    .welcome__block
+      include ../common/person.pug
+      ul.socials
+        each item in ["vk", "github"]
+          li.socials__item
+            a(href='' class="socials__link socials__link_" + item)
+              svg(class='socials__link-img socials__link-img_' + item) 
+                use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
+      ul.menu 
+        each item in ["Мои работы", "Обо мне", "Блог"]
+          li.menu__item
+              a.menu__link= item  
+    .welcome__copyrights
+      span.welcome__copyrights-text © Зайнуллин Роман | создано с любовью в LoftSchool | 2017            

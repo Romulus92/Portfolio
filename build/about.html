@@ -7,25 +7,121 @@
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="/assets/styles/app.min.css">
-    <script src="/assets/scripts/bundle.js" defer></script>
+    <link rel="stylesheet" href="/assets/styles/main.min.css">
   </head>
   <body>
-    <h1>Обо мне</h1>
-    <p>Я умею
-      <ul class="technologies">
-        <li><img src="assets/images/sass.svg"></li>
-        <li><img src="assets/images/pug.svg"></li>
-        <li><img src="assets/images/gulp.svg"></li>
-        <li><img src="assets/images/webpack.svg"></li>
-      </ul>
-    </p>
-    <h2>Меню</h2>
-    <ul class="menu">
-      <li><a href="/index.html">Главная</a></li>
-      <li><a href="/about.html">Обо мне</a></li>
-      <li><a href="my-works.html">Мои работы</a></li>
-      <li><a href="blog.html">Блог</a></li>
-    </ul>
+    <div class="about__wrapper">
+      <header class="header">
+        <div class="header__top">
+          <ul class="about__socials">
+            <li class="socials__item"><a class="socials__link socials__link_vk" href="">
+                <svg class="socials__link-img socials__link-img_vk"> 
+                  <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#vk"></use>
+                </svg></a></li>
+            <li class="socials__item"><a class="socials__link socials__link_github" href="">
+                <svg class="socials__link-img socials__link-img_github"> 
+                  <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#github"></use>
+                </svg></a></li>
+          </ul>
+          <div class="about__hamburger">
+            <svg class="hamburger">
+              <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="header__person">
+          <div class="person__picture"><img class="person__image" src="assets/images/razrab.png" alt=""></div>
+          <h1 class="person__name">Зайнуллин Роман</h1><span class="person__desc">Веб-разработчик</span>
+        </div>
+        <div class="header__scroll">
+          <svg class="arrow__down">
+            <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#arrow_down"></use>
+          </svg>
+        </div>
+      </header>
+      <div class="about__content">
+        <div class="about__person">
+          <div class="about__heading">
+            <h1 class="about__heading-text">Обо мне</h1>
+          </div>
+          <div class="about__desc"><img class="about__img" src="assets/images/about_picture.png" alt="">
+            <h2 class="about__heading-desc">Кто я</h2>
+            <p class="about__text">Я веб разработчик из Уфы. Мне 25 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.</p>
+            <p class="about__text">Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!</p>
+          </div>
+        </div>
+        <div class="about__skills">
+          <div class="skills__desc">
+            <h2 class="skills__heading">Чем я могу быть вам полезен</h2>
+            <p class="skills__text">Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
+          </div>
+          <ul class="skills-list">
+            <li class="skills-list__item">
+              <div class="skills-row"><span class="skills-row__title">Frontend</span>
+                <ul class="skills-row__list">
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">HTML5     </span>
+                    </div>
+                  </li>
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">CSS3     </span>
+                    </div>
+                  </li>
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">JavaScript     </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="skills-list__item">
+              <div class="skills-row"><span class="skills-row__title">Backend</span>
+                <ul class="skills-row__list">
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">HTML5     </span>
+                    </div>
+                  </li>
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">CSS3     </span>
+                    </div>
+                  </li>
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">JavaScript     </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="skills-list__item">
+              <div class="skills-row"><span class="skills-row__title">Workflow</span>
+                <ul class="skills-row__list">
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">HTML5     </span>
+                    </div>
+                  </li>
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">CSS3     </span>
+                    </div>
+                  </li>
+                  <li class="skills-row__item">
+                    <div class="skill">
+                      <svg class="skill__circle"></svg><span class="skill__title">JavaScript     </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

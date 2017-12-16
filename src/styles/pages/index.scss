@@ -1,0 +1,121 @@
+.welcome__wrapper {
+    background: url("/assets/images/mountains.png") center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    vertical-align: middle;
+}
+
+.welcome__auto {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.welcome__button {
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    height: rem(45px);
+    width: rem(180px);
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: rem(24px);
+    margin-right: rem(100px);
+}
+
+.welcome__button-text {
+    font-family: 'Roboto Medium', Arial, Helvetica, sans-serif;
+    padding-top: rem(10px);
+}
+
+.welcome__block {
+    padding-top: rem(37px);
+    align-self: center;
+    text-align: center;
+    width: rem(380px);
+    height: rem(395px);
+    background: rgba(255, 255, 255, 0.85);
+    position: relative;
+    border-radius: rem(5px);
+    margin-top: rem(180px);
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.social__item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.socials__link {
+    color: $socialazure;
+}
+
+.socials__link-img_vk {
+    width: rem(30px);
+    height: rem(17px);
+    opacity: 0.85;
+}
+
+.socials__link-img_github {
+    width: rem(26px);
+    height: rem(22px);
+}
+
+.social__link-img {
+    opacity: 0.85;
+    align-self: center;
+}
+
+.menu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.menu__item {
+    width: 100%;
+    border-right: 2px solid $lightazure;
+    background-color: rgba($azure, 0.85);
+    transition: all 0.5s ease-in-out;
+    &:last-child {
+        border-right: none;
+    }
+    &:hover {
+        background-color: rgba($darkazure, 0.85)
+    }
+}
+
+.menu__link {
+    height: rem(45px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Roboto Medium', Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.welcome__copyrights {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: rem(40px);
+    justify-content: center;
+    font-family: 'Roboto Light', Arial, Helvetica, sans-serif;
+    color: white;
+}
