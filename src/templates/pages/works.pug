@@ -1,0 +1,52 @@
+extends ../template
+
+block variables
+  - var title = 'Мои работы'
+
+block content
+  .works__wrapper
+    section.header
+      .header__top
+        ul.socials.header__socials
+          each item in ["vk", "github"]
+            li.socials__item
+              a(href='' class="socials__link socials__link_" + item)
+                svg(class='socials__link-img socials__link-img_' + item) 
+                  use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
+        .about__hamburger
+          svg.hamburger
+            use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger")
+      .header__person
+        include ../common/person.pug
+      .header__scroll
+        svg.arrow
+          use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#arrow_down")
+      .header__triangles
+        svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
+          polygon.left-triangle(points="0,0   0,86   500.8,86   500.8,75.5")
+          polygon.right-triangle(points="1000,0   1000,86   500,86   500,75.5")
+    section.works__portfolio
+      .works-heading
+        h1.works-heading__text Мои работы
+      .works-school
+        h2.works-school__heading Сайт школы онлайн Образования
+        .works-school__skills
+          .works-school__skills-text HTML , CSS, JAVASCRIPT
+        .works-school__button
+          .works-school__button-img
+          span.works-school__button-text Посмотреть сайт
+      .works-sites
+        .works-sites__main
+          img.works-sites__main-img
+        .works-sites__down
+          svg.arrow.arrow__down-portfolio
+            use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down")
+        .works-sites__up
+          svg.arrow.arrow__up-portfolio
+            use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up")
+    section.works__review
+      .works-heading
+        h1.works-heading__text Что обо мне говорят
+      
+
+        
