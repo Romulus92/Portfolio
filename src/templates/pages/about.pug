@@ -17,16 +17,16 @@ block content
         .about__hamburger
           svg.hamburger
             use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger")
-      .header__person
+      .person.person-normal
         include ../common/person.pug
       .header__scroll
         svg.arrow
-          use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#arrow_down")
+          use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#arrow_down") 
       .header__triangles
         svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
           polygon.left-triangle(points="0,0   0,86   500.8,86   500.8,75.5")
-          polygon.right-triangle(points="1000,0   1000,86   500,86   500,75.5")
-    section.about__content
+          polygon.right-triangle(points="1000,0   1000,86   500,86   500,75.5")   
+    section.about
       .about__person
         .about__heading
           h1.about__heading-text Обо мне
@@ -72,7 +72,7 @@ block content
                   svg(class='contacts-img contacts-img_' + contact[0]) 
                       use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + contact[0]) 
                 .contacts-row__content #{contact[1]}
-        .footer
+        .footer.footer_about
           .footer__row
             ul.footer-menu
               each item in ['Мои Работы', 'Обо мне', 'Блог', 'Авторизация']

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="Ru-ru">
   <head>
     <meta charset="utf-8">
     <title>Мои работы</title>
@@ -29,7 +29,7 @@
             </svg>
           </div>
         </div>
-        <div class="header__person">
+        <div class="person person-normal">
           <div class="person__picture"><img class="person__image" src="assets/images/razrab.png" alt=""></div>
           <h1 class="person__name">Зайнуллин Роман</h1><span class="person__desc">Веб-разработчик</span>
         </div>
@@ -47,28 +47,116 @@
       </section>
       <section class="works__portfolio">
         <div class="works-heading">
-          <h1 class="works-heading__text">Мои работы</h1>
+          <div class="works-heading__wrap">
+            <h1 class="works-heading__text">Мои работы</h1>
+          </div>
         </div>
         <div class="works-school">
-          <h2 class="works-school__heading">Сайт школы онлайн Образования</h2>
-          <div class="works-school__skills">
-            <div class="works-school__skills-text">HTML , CSS, JAVASCRIPT</div>
-          </div>
-          <div class="works-school__button">
-            <div class="works-school__button-img"></div><span class="works-school__button-text">Посмотреть сайт</span>
+          <div class="works-school__container">
+            <h2 class="works-school__heading">Сайт школы онлайн</h2>
+            <h2 class="works-school__heading works-school__heading-inactive">Образования</h2>
+            <div class="works-school__skills">
+              <div class="works-school__skills-text">HTML , CSS, JAVASCRIPT</div>
+            </div>
+            <div class="works-school__button">
+              <div class="works-school__button-img">
+                <svg class="link-img">
+                  <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#link"></use>
+                </svg>
+              </div><span class="works-school__button-text">Посмотреть сайт</span>
+            </div>
           </div>
         </div>
         <div class="works-sites">
-          <div class="works-sites__main"><img class="works-sites__main-img"></div>
-          <div class="works-sites__down">
-            <svg class="arrow arrow__down-portfolio">
-              <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down"></use>
+          <div class="works-sites__main"><img class="works-sites__main-img" src="assets/images/sites1.png"></div>
+          <div class="works-sites-slider works-sites-slider__down">
+            <div class="works-sites__down">
+              <svg class="arrow arrow__down-portfolio">
+                <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="works-sites-slider works-sites-slider__up">
+            <div class="works-sites__up">
+              <svg class="arrow arrow__up-portfolio">
+                <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="works__review">
+        <div class="works-reviews">
+          <div class="works-heading works-heading__about-me">
+            <div class="works-heading__wrap works-heading__wrap-about-me">
+              <h1 class="works-heading__text">Что обо мне</h1>
+              <h1 class="works-heading__text works-review__heading-inactive">говорят</h1>
+            </div>
+          </div>
+          <div class="works-reviews__container">
+            <div class="work-review-row">
+              <div class="review__icon"></div>
+              <p class="review__text">Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!</p>
+              <div class="review-autor"><img class="review-autor__img" src="assets/images/kovalchuk.png">
+                <div class="review-autor__desc"><span class="review-autor__name">Ковальчук Дмитрий</span><span class="review-autor__occup">основатель Loftschool</span></div>
+              </div>
+            </div>
+            <div class="work-review-row">
+              <div class="review__icon"></div>
+              <p class="review__text">Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!</p>
+              <div class="review-autor"><img class="review-autor__img" src="assets/images/sabantsev.png">
+                <div class="review-autor__desc"><span class="review-autor__name">Сабанцев Владимир</span><span class="review-autor__occup">преподаватель</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="works-form">
+            <h2 class="works-form__heading">Связаться со мной</h2>
+            <form class="contact-me">
+              <div class="contact-me__container">
+                <label class="contact-me__form-block">
+                  <input class="contact-me__form-input" name="name" type="text" placeholder="Имя">
+                </label>
+                <label class="contact-me__form-block">
+                  <input class="contact-me__form-input" name="email" type="text" placeholder="E-mail">
+                </label>
+                <label class="contact-me__form-block">                     
+                  <textarea class="contact-me__form-input contact-me__form-input_textarea" name="comment" placeholder="Ваще сообщение"></textarea>
+                </label>
+                <div class="contact-me__buttons"> 
+                  <input class="contact-me__form-button contact-me__form-button_left" name="" type="submit" value="Заказать">
+                  <input class="contact-me__form-button contact-me__form-button_right" name="" type="submit" value="Очистить">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="contact-me__arrow">
+            <svg class="arrow">
+              <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up"> </use>
             </svg>
           </div>
-          <div class="works-sites__up">
-            <svg class="arrow arrow__up-portfolio">
-              <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up"></use>
-            </svg>
+          <div class="footer">
+            <div class="footer__row">
+              <ul class="footer-menu">
+                <li class="footer-menu__item"><a class="footer-menu__text">Мои Работы</a></li>
+                <li class="footer-menu__item"><a class="footer-menu__text">Обо мне</a></li>
+                <li class="footer-menu__item"><a class="footer-menu__text">Блог</a></li>
+                <li class="footer-menu__item"><a class="footer-menu__text">Авторизация</a></li>
+              </ul>
+              <ul class="footer-socials">
+                <li class="socials__item"><a class="socials__link socials__link_vk_round" href="">
+                    <svg class="socials__link-img socials__link-img_vk_round"> 
+                      <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#vk_round"></use>
+                    </svg></a></li>
+                <li class="socials__item"><a class="socials__link socials__link_github_round" href="">
+                    <svg class="socials__link-img socials__link-img_github_round"> 
+                      <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#github_round"></use>
+                    </svg></a></li>
+              </ul>
+            </div>
+            <div class="footer__row">
+              <p class="about__copyright about__copyright-left">Я разрабочтик из Уфы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool</p>
+              <p class="about__copyright about__copyright-right">© Роман Зайнуллин | создано с любовью в LoftSchool | 2017 </p>
+            </div>
           </div>
         </div>
       </section>

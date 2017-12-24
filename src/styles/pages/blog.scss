@@ -1,0 +1,136 @@
+.blog__wrapper {
+    position: relative;
+}
+
+.header__blog {
+    background: url('../images/mountains_blog.png') center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: rem(400px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header__container {
+    width: rem(1200px);
+    align-self: center;
+}
+
+.header__top_blog {
+    margin-bottom: rem(20px);
+}
+
+.blog__heading {
+    font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
+    font-size: rem(50px);
+    margin: 0;
+    color: white;
+    text-align: center;
+    &::before {
+        content: ' ';
+        width: rem(22px);
+        height: rem(5px);
+        background-color: $grey;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: rem(20px);
+        margin-bottom: rem(15px);
+        opacity: 0.5;
+    }
+    &::after {
+        content: ' ';
+        width: rem(22px);
+        height: rem(5px);
+        background-color: $grey;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: rem(20px);
+        margin-bottom: rem(15px);
+        opacity: 0.5;
+    }
+}
+
+.blog__desc {
+    font-family: 'Roboto Regular', Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.left-triangle_blog {
+    fill: white;
+}
+
+.right-triangle_blog {
+    fill: white;
+}
+
+.blog__content {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: rem(20px);
+}
+
+.blog-sidebar {
+    width: 27%;
+    margin-right: rem(120px);
+}
+
+.blog-sidebar__item {
+    margin-bottom: rem(40px);
+    &:hover .blog-sidebar__link {
+        color: #00bfa5;
+    }
+}
+
+.blog-sidebar__item_container {
+    height: rem(40px);
+    display: flex;
+    margin: auto;
+    justify-content: flex-end;
+    border-right: 3px solid #00bfa5;
+    max-width: rem(250px);
+    flex-wrap: wrap;
+}
+
+.blog-sidebar__link {
+    text-decoration: none;
+    margin-right: rem(18px);
+    align-self: center;
+    color: $darkolive;
+    transition: all 0.3s ease-in-out;
+}
+
+.blog-articles {
+    width: 55%;
+}
+
+.blog-articles__item {
+    padding-bottom: rem(70px);
+    padding-top: rem(60px);
+    border-bottom: 5px solid #f1f1f2;
+    &:first-child {
+        padding-top: 0;
+    }
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.blog-articles__heading {
+    font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
+    color: $darkolive;
+    font-size: rem(35px);
+    margin: 0;
+}
+
+.blog-articles__date {
+    color: #00bfa5;
+    font-family: "Roboto Regular", Arial, Helvetica, sans-serif;
+}
+
+.blog-articles__text {
+    margin-top: rem(10px);
+    margin-bottom: 0;
+}

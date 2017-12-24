@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="Ru-ru">
   <head>
     <meta charset="utf-8">
     <title>Блог</title>
@@ -10,20 +10,88 @@
     <link rel="stylesheet" href="/assets/styles/main.min.css">
   </head>
   <body>
-    <h1>Блог</h1>
-    <ul>
-      <li>
-        <h2>Заголовок статьи</h2>
-        <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
-      </li>
-      <li>
-        <h2>Ещё статья</h2>
-        <p>Далеко-далеко за словесными горами в стране.</p>
-      </li>
-      <li>
-        <h2>Последняя статья</h2>
-        <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Курсивных то осталось за.</p>
-      </li>
-    </ul>
+    <div class="blog__wrapper">
+      <section class="header__blog">
+        <div class="header__container">
+          <div class="header__top header__top_blog">
+            <ul class="socials header__socials">
+              <li class="socials__item"><a class="socials__link socials__link_vk" href="">
+                  <svg class="socials__link-img socials__link-img_vk"> 
+                    <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#vk"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link socials__link_github" href="">
+                  <svg class="socials__link-img socials__link-img_github"> 
+                    <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#github"></use>
+                  </svg></a></li>
+            </ul>
+            <div class="about__hamburger">
+              <svg class="hamburger">
+                <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="person">
+            <div class="person__picture"><img class="person__image" src="assets/images/razrab.png" alt=""></div>
+            <h1 class="blog__heading">Блог</h1><span class="blog__desc">Статьи которые я написал</span>
+          </div>
+        </div>
+        <div class="header__triangles">
+          <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
+            <polygon class="left-triangle left-triangle_blog" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+            <polygon class="right-triangle right-triangle_blog" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+          </svg>
+        </div>
+      </section>
+      <section class="blog__content">
+        <div class="blog-sidebar">
+          <ul class="blog-sidebar__list">
+            <li class="blog-sidebar__item">
+              <div class="blog-sidebar__item_container"><a class="blog-sidebar__link blog-sidebar__link_Самое важное в SASS" href="">Самое важное в SASS</a></div>
+            </li>
+            <li class="blog-sidebar__item">
+              <div class="blog-sidebar__item_container"><a class="blog-sidebar__link blog-sidebar__link_Почему я выбрал Pug" href="">Почему я выбрал Pug</a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="blog-articles">
+          <ul class="blog-articles__list">
+            <li class="blog-articles__item">
+              <h2 class="blog-articles__heading">Самое важное в SASS</h2><span class="blog-articles__date">22 ноября 2017</span>
+              <p class="blog-articles__text">Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
+              <p class="blog-articles__text">Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+            </li>
+            <li class="blog-articles__item">
+              <h2 class="blog-articles__heading">Почему я выбрал Pug</h2><span class="blog-articles__date">16 ноября 2017</span>
+              <p class="blog-articles__text">Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.</p>
+              <p class="blog-articles__text">Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="footer">
+          <div class="footer__row">
+            <ul class="footer-menu">
+              <li class="footer-menu__item"><a class="footer-menu__text">Мои Работы</a></li>
+              <li class="footer-menu__item"><a class="footer-menu__text">Обо мне</a></li>
+              <li class="footer-menu__item"><a class="footer-menu__text">Блог</a></li>
+              <li class="footer-menu__item"><a class="footer-menu__text">Авторизация</a></li>
+            </ul>
+            <ul class="footer-socials">
+              <li class="socials__item"><a class="socials__link socials__link_vk_round" href="">
+                  <svg class="socials__link-img socials__link-img_vk_round"> 
+                    <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#vk_round"></use>
+                  </svg></a></li>
+              <li class="socials__item"><a class="socials__link socials__link_github_round" href="">
+                  <svg class="socials__link-img socials__link-img_github_round"> 
+                    <use xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#github_round"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+          <div class="footer__row">
+            <p class="about__copyright about__copyright-left">Я разрабочтик из Уфы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool</p>
+            <p class="about__copyright about__copyright-right">© Роман Зайнуллин | создано с любовью в LoftSchool | 2017</p>
+          </div>
+        </div>
+      </section>
+    </div>
   </body>
 </html>

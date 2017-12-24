@@ -16,7 +16,7 @@ block content
         .about__hamburger
           svg.hamburger
             use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger")
-      .header__person
+      .person.person-normal
         include ../common/person.pug
       .header__scroll
         svg.arrow
@@ -27,26 +27,92 @@ block content
           polygon.right-triangle(points="1000,0   1000,86   500,86   500,75.5")
     section.works__portfolio
       .works-heading
-        h1.works-heading__text Мои работы
+        .works-heading__wrap
+          h1.works-heading__text Мои работы
       .works-school
-        h2.works-school__heading Сайт школы онлайн Образования
-        .works-school__skills
-          .works-school__skills-text HTML , CSS, JAVASCRIPT
-        .works-school__button
-          .works-school__button-img
-          span.works-school__button-text Посмотреть сайт
+        .works-school__container
+          h2.works-school__heading Сайт школы онлайн
+          h2.works-school__heading.works-school__heading-inactive Образования
+          .works-school__skills
+            .works-school__skills-text HTML , CSS, JAVASCRIPT
+          .works-school__button
+            .works-school__button-img
+              svg.link-img
+                use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#link")
+            span.works-school__button-text Посмотреть сайт
       .works-sites
         .works-sites__main
-          img.works-sites__main-img
-        .works-sites__down
-          svg.arrow.arrow__down-portfolio
-            use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down")
-        .works-sites__up
-          svg.arrow.arrow__up-portfolio
-            use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up")
+          img.works-sites__main-img(src='assets/images/sites1.png')
+        .works-sites-slider.works-sites-slider__down
+          .works-sites__down
+            svg.arrow.arrow__down-portfolio
+              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down")
+        .works-sites-slider.works-sites-slider__up
+          .works-sites__up
+            svg.arrow.arrow__up-portfolio
+              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up")
     section.works__review
-      .works-heading
-        h1.works-heading__text Что обо мне говорят
+      .works-reviews
+        .works-heading.works-heading__about-me
+            .works-heading__wrap.works-heading__wrap-about-me
+              h1.works-heading__text Что обо мне
+              h1.works-heading__text.works-review__heading-inactive говорят
+        .works-reviews__container
+          .work-review-row
+            .review__icon
+            p.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+            .review-autor
+              img.review-autor__img(src='assets/images/kovalchuk.png')
+              .review-autor__desc
+                span.review-autor__name Ковальчук Дмитрий
+                span.review-autor__occup основатель Loftschool
+          .work-review-row
+            .review__icon
+            p.review__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+            .review-autor
+              img.review-autor__img(src='assets/images/sabantsev.png')
+              .review-autor__desc
+                span.review-autor__name Сабанцев Владимир
+                span.review-autor__occup преподаватель
+        .works-form
+          h2.works-form__heading Связаться со мной
+          form.contact-me
+            .contact-me__container
+              label.contact-me__form-block
+                input.contact-me__form-input(name="name" type="text" placeholder="Имя")
+              label.contact-me__form-block
+                input.contact-me__form-input(name="email" type="text" placeholder="E-mail")
+              label.contact-me__form-block                      
+                textarea.contact-me__form-input.contact-me__form-input_textarea(name="comment" placeholder="Ваще сообщение")
+              .contact-me__buttons  
+                input.contact-me__form-button.contact-me__form-button_left(name="" type="submit" value="Заказать")
+                input.contact-me__form-button.contact-me__form-button_right(name="" type="submit" value="Очистить")
+        .contact-me__arrow
+          svg.arrow
+            use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up")  
+        .footer
+          .footer__row
+            ul.footer-menu
+              each item in ['Мои Работы', 'Обо мне', 'Блог', 'Авторизация']
+                li.footer-menu__item
+                  a.footer-menu__text #{item}
+            ul.footer-socials
+              each item in ["vk", "github"]
+                li.socials__item
+                  a(href='' class="socials__link socials__link_" + item + "_round")
+                    svg(class='socials__link-img socials__link-img_' + item + "_round") 
+                      use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item + "_round")
+          .footer__row
+            p.about__copyright.about__copyright-left Я разрабочтик из Уфы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+            p.about__copyright.about__copyright-right © Роман Зайнуллин | создано с любовью в LoftSchool | 2017 
+                                      
+            
+
+
+
+
+          
+        
       
 
         

@@ -1,17 +1,63 @@
 extends ../template
 
 block variables
-    - var title = 'Блог'
+  - var title = 'Блог'
 
 block content
-    h1 Блог
-    ul
-        li
-            h2 Заголовок статьи
-            p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
-        li
-            h2 Ещё статья
-            p Далеко-далеко за словесными горами в стране.
-        li
-            h2 Последняя статья
-            p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Курсивных то осталось за.
+  .blog__wrapper
+    section.header__blog
+      .header__container
+        .header__top.header__top_blog
+          ul.socials.header__socials
+            each item in ["vk", "github"]
+              li.socials__item
+                a(href='' class="socials__link socials__link_" + item)
+                  svg(class='socials__link-img socials__link-img_' + item) 
+                    use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
+          .about__hamburger
+            svg.hamburger
+              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger")
+        .person
+          .person__picture
+            img.person__image(src="assets/images/razrab.png", alt="")
+          h1.blog__heading Блог
+          span.blog__desc Статьи которые я написал
+      .header__triangles
+        svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
+          polygon.left-triangle.left-triangle_blog(points="0,0   0,86   500.8,86   500.8,75.5")
+          polygon.right-triangle.right-triangle_blog(points="1000,0   1000,86   500,86   500,75.5")
+    section.blog__content
+      .blog-sidebar
+        ul.blog-sidebar__list
+          each item in ['Самое важное в SASS', 'Почему я выбрал Pug']
+            li.blog-sidebar__item
+              .blog-sidebar__item_container
+                a(href='' class='blog-sidebar__link blog-sidebar__link_' + item) #{item}
+      .blog-articles
+        ul.blog-articles__list
+          -
+            var articles = [
+              ['Самое важное в SASS', '22 ноября 2017'],
+              ['Почему я выбрал Pug', '16 ноября 2017'],
+            ]
+          each article in articles
+            li.blog-articles__item
+              h2.blog-articles__heading #{article[0]}
+              span.blog-articles__date #{article[1]}
+              p.blog-articles__text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+              p.blog-articles__text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+      .footer
+        .footer__row
+          ul.footer-menu
+            each item in ['Мои Работы', 'Обо мне', 'Блог', 'Авторизация']
+              li.footer-menu__item
+                a.footer-menu__text #{item}
+          ul.footer-socials
+            each item in ["vk", "github"]
+              li.socials__item
+                a(href='' class="socials__link socials__link_" + item + "_round")
+                  svg(class='socials__link-img socials__link-img_' + item + "_round") 
+                    use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item + "_round")
+        .footer__row
+          p.about__copyright.about__copyright-left Я разрабочтик из Уфы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+          p.about__copyright.about__copyright-right © Роман Зайнуллин | создано с любовью в LoftSchool | 2017
