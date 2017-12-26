@@ -10,8 +10,8 @@ block content
       .header__top
         ul.socials.header__socials
           each item in ["vk", "github"]
-            li.socials__item
-              a(href='' class="socials__link socials__link_" + item)
+            li.socials__item.socials__item-about
+              a(href='' class="socials__link socials__link-white socials__link_" + item)
                 svg(class='socials__link-img socials__link-img_' + item) 
                   use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
         .about__hamburger
@@ -75,13 +75,20 @@ block content
         .footer.footer_about
           .footer__row
             ul.footer-menu
-              each item in ['Мои Работы', 'Обо мне', 'Блог', 'Авторизация']
+              -
+                var menu = [
+                  ['Мои Работы', 'works.html'],
+                  ['Обо мне', 'about.html'],
+                  ['Блог','blog.html'],
+                  ['Авторизация', 'login.html'],
+                ]
+              each item in menu
                 li.footer-menu__item
-                  a.footer-menu__text #{item}
+                  a.footer-menu__text(href='' + item[1]) #{item[0]}
             ul.footer-socials
               each item in ["vk", "github"]
                 li.socials__item
-                  a(href='' class="socials__link socials__link_" + item + "_round")
+                  a(href='' class="socials__link socials__link-white socials__link_" + item + "_round")
                     svg(class='socials__link-img socials__link-img_' + item + "_round") 
                       use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item + "_round")
           .footer__row

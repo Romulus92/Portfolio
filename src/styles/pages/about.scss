@@ -11,6 +11,7 @@
 .hamburger {
     width: rem(40px);
     height: rem(35px);
+    fill: #ffffff;
 }
 
 .header__top {
@@ -26,13 +27,17 @@
     justify-content: flex-start;
 }
 
-.socials__item {
+.socials__item-about {
     margin-right: rem(30px);
     opacity: 0.7;
     transition: all 0.3s ease-in-out;
     &:hover {
         opacity: 1;
     }
+}
+
+.socials__link-white {
+    fill: #ffffff;
 }
 
 .about__hamburger {
@@ -86,6 +91,7 @@
     opacity: 0.7;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    fill: #ffffff;
     &:hover {
         opacity: 1;
     }
@@ -313,6 +319,7 @@
 .contacts-img {
     height: rem(24px);
     width: rem(24px);
+    fill: #00bea4;
 }
 
 .contacts-row__content {
@@ -357,10 +364,15 @@
     display: flex;
     align-items: center;
     font-family: 'Roboto Medium', Arial, Helvetica, sans-serif;
-    color: white;
     margin-right: rem(40px);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+}
+
+.footer-menu__text {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
     &:hover {
         color: #00bfa5;
     }

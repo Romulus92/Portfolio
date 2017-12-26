@@ -10,7 +10,7 @@ block content
         ul.socials.header__socials
           each item in ["vk", "github"]
             li.socials__item
-              a(href='' class="socials__link socials__link_" + item)
+              a(href='' class="socials__link socials__link-white socials__link_" + item)
                 svg(class='socials__link-img socials__link-img_' + item) 
                   use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
         .about__hamburger
@@ -93,19 +93,25 @@ block content
         .footer
           .footer__row
             ul.footer-menu
-              each item in ['Мои Работы', 'Обо мне', 'Блог', 'Авторизация']
+              -
+                var menu = [
+                  ['Мои Работы', 'works.html'],
+                  ['Обо мне', 'about.html'],
+                  ['Блог','blog.html'],
+                  ['Авторизация', 'login.html'],
+                ]
+              each item in menu
                 li.footer-menu__item
-                  a.footer-menu__text #{item}
+                  a.footer-menu__text(href='' + item[1]) #{item[0]}
             ul.footer-socials
               each item in ["vk", "github"]
                 li.socials__item
-                  a(href='' class="socials__link socials__link_" + item + "_round")
+                  a(href='' class="socials__link socials__link-white socials__link_" + item + "_round")
                     svg(class='socials__link-img socials__link-img_' + item + "_round") 
                       use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item + "_round")
           .footer__row
             p.about__copyright.about__copyright-left Я разрабочтик из Уфы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
-            p.about__copyright.about__copyright-right © Роман Зайнуллин | создано с любовью в LoftSchool | 2017 
-                                      
+            p.about__copyright.about__copyright-right © Роман Зайнуллин | создано с любовью в LoftSchool | 2017
             
 
 
