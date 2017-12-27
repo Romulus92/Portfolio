@@ -12,6 +12,9 @@
     display: flex;
     justify-content: flex-end;
     position: relative;
+    @include phones {
+        justify-content: center;
+    }
 }
 
 .welcome__button {
@@ -31,6 +34,20 @@
         background-color: white;
         color: #00bfa5;
     }
+    @include netbooks {
+        right: rem(20px);
+    }
+    @include tablets {
+        right: rem(25px);
+    }
+    @include phones {
+        justify-content: center;
+        position: initial;
+        height: 40px;
+        width: 150px;
+        margin-top: 10px;
+        margin-right: 0;
+    }
 }
 
 .welcome__button-text {
@@ -48,6 +65,14 @@
     position: relative;
     border-radius: rem(5px);
     margin: auto;
+    @include tablets {
+        width: rem(350px);
+    }
+    @include phones {
+        position: absolute;
+        width: rem(300px);
+        margin-top: 85px;
+    }
 }
 
 .socials {
@@ -136,4 +161,9 @@
     justify-content: center;
     font-family: 'Roboto Light', Arial, Helvetica, sans-serif;
     color: white;
+    @include phones {
+        text-align: center;
+        align-self: center;
+        max-width: 250px;
+    }
 }

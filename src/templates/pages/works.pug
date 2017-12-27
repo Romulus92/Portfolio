@@ -29,28 +29,29 @@ block content
       .works-heading
         .works-heading__wrap
           h1.works-heading__text Мои работы
-      .works-school
-        .works-school__container
-          h2.works-school__heading Сайт школы онлайн
-          h2.works-school__heading.works-school__heading-inactive Образования
-          .works-school__skills
-            .works-school__skills-text HTML , CSS, JAVASCRIPT
-          .works-school__button
-            .works-school__button-img
-              svg.link-img
-                use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#link")
-            span.works-school__button-text Посмотреть сайт
-      .works-sites
-        .works-sites__main
+      .works-container
+        .works-school
+          .works-school__container
+            h2.works-school__heading Сайт школы онлайн
+            h2.works-school__heading.works-school__heading-inactive Образования
+            .works-school__skills
+              .works-school__skills-text HTML , CSS, JAVASCRIPT
+            .works-school__button
+              .works-school__button-img
+                svg.link-img
+                  use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#link")
+              span.works-school__button-text Посмотреть сайт
+        .works-sites
           img.works-sites__main-img(src='assets/images/sites1.png')
-        .works-sites-slider.works-sites-slider__down
-          .works-sites__down
-            svg.arrow.arrow__down-portfolio
-              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down")
-        .works-sites-slider.works-sites-slider__up
-          .works-sites__up
-            svg.arrow.arrow__up-portfolio
-              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up")
+        .works-sites__other  
+          .works-sites-slider.works-sites-slider__down
+            .works-sites__down
+              svg.arrow.arrow__down-portfolio
+                use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down")
+          .works-sites-slider.works-sites-slider__up
+            .works-sites__up
+              svg.arrow.arrow__up-portfolio
+                use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up")
     section.works__review
       .works-reviews
         .works-heading.works-heading__about-me
