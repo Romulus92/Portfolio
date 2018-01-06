@@ -72,28 +72,28 @@ block content
                   svg(class='contacts-img contacts-img_' + contact[0]) 
                       use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + contact[0]) 
                 .contacts-row__content #{contact[1]}
-        .footer.footer_about
-          .footer__row
-            ul.footer-menu
-              -
-                var menu = [
-                  ['Мои Работы', 'works.html'],
-                  ['Обо мне', 'about.html'],
-                  ['Блог','blog.html'],
-                  ['Авторизация', 'login.html'],
-                ]
-              each item in menu
-                li.footer-menu__item
-                  a.footer-menu__text(href='' + item[1]) #{item[0]}
-            ul.footer-socials
-              each item in ["vk", "github"]
-                li.socials__item
-                  a(href='' class="socials__link socials__link-white socials__link_" + item + "_round")
-                    svg(class='socials__link-img socials__link-img_' + item + "_round") 
-                      use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item + "_round")
-          .footer__row
-            p.about__copyright.about__copyright-left Я разрабочтик из Уфы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
-            p.about__copyright.about__copyright-right © Роман Зайнуллин | создано с любовью в LoftSchool | 2017
+      .footer.footer_about
+        .footer__row
+          ul.footer-menu
+            -
+              var menu = [
+                ['Мои Работы', 'works.html'],
+                ['Обо мне', 'about.html'],
+                ['Блог','blog.html'],
+                ['Авторизация', 'login.html'],
+              ]
+            each item in menu
+              li.footer-menu__item
+                a.footer-menu__text(href='' + item[1]) #{item[0]}
+          ul.footer-socials
+            each item in ["vk", "github"]
+              li.socials__item
+                a(href='' class="socials__link socials__link-white socials__link_" + item + "_round")
+                  svg(class='socials__link-img socials__link-img_' + item + "_round") 
+                    use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item + "_round")
+        .footer__row
+          p.about__copyright.about__copyright-left Я разрабочтик из Уфы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+          p.about__copyright.about__copyright-right © Роман Зайнуллин | создано с любовью в LoftSchool | 2017
 
       
           

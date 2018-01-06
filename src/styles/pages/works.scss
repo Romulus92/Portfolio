@@ -14,33 +14,36 @@
     flex-direction: column;
     flex-wrap: wrap;
     @include tablets {
+        min-height: rem(990px);
         height: initial;
+    }
+    @include phones {
+        min-height: rem(860px);
     }
 }
 
 .works-heading {
     height: rem(185px);
     font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
-    font-size: rem(30px);
-    color: $darkheading;
     display: flex;
     justify-content: center;
     align-content: center;
     background-color: #efeee9;
     width: 100%;
+    @include phones {
+        height: rem(90px);
+    }
 }
 
-.works-heading__wrap {
-    background: url("../images/works_header.png") center center no-repeat;
-    background-size: contain;
-    margin: auto;
-}
-
-.works-heading__text {
+.heading-text {
     margin: 0;
     display: flex;
     text-align: center;
     justify-content: center;
+    font-size: rem(63px);
+    line-height: rem(66px);
+    max-width: rem(450px);
+    font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
     &::before {
         content: ' ';
         width: rem(22px);
@@ -48,8 +51,7 @@
         background-color: $grey;
         display: inline-block;
         vertical-align: middle;
-        margin-right: rem(20px);
-        margin-top: rem(40px);
+        //margin-top: rem(40px);
     }
     &::after {
         content: ' ';
@@ -58,8 +60,66 @@
         background-color: $grey;
         display: inline-block;
         vertical-align: middle;
+        //margin-top: rem(40px);
+        &:last-child {
+            content: none;
+        }
+    }
+    @include tablets {
+        max-width: rem(350px);
+        font-size: rem(49px);
+        line-height: rem(52px);
+    }
+    @include phones {
+        max-width: rem(280px);
+        font-size: rem(35px);
+        line-height: rem(42px);
+    }
+}
+
+.heading-text__works {
+    color: $darkheading;
+    &::before {
+        margin-top: rem(30px);
+        margin-right: rem(20px);
+        @include tablets {
+            margin-top: rem(25px);
+        }
+        @include phones {
+            margin-top: rem(17px);
+        }
+    }
+    &::after {
+        margin-top: rem(30px);
         margin-left: rem(20px);
-        margin-top: rem(40px);
+        @include tablets {
+            margin-top: rem(25px);
+        }
+        @include phones {
+            margin-top: rem(17px);
+        }
+    }
+}
+
+.works-heading__wrap {
+    background: url("../images/works_header.png") center center no-repeat;
+    background-size: contain;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.heading-text__school {
+    font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
+    color: $darkheading;
+    font-size: rem(35px);
+    line-height: rem(41px);
+    max-width: rem(400px);
+    &::before {
+        margin-top: rem(20px);
+    }
+    &::after {
+        margin-top: rem(20px);
         &:last-child {
             content: none;
         }
@@ -79,7 +139,7 @@
         width: 100%;
         height: initial;
         padding-top: rem(10px);
-        padding-bottom: rem(10px);
+        padding-bottom: rem(50px);
     }
 }
 
@@ -91,7 +151,8 @@
 }
 
 .works-school__skills {
-    width: rem(425px);
+    max-width: rem(425px);
+    min-width: rem(320px);
     height: rem(50px);
     font-family: 'Roboto Medium', Arial, Helvetica, sans-serif;
     border-bottom: 1px solid #acd6ce;
@@ -133,51 +194,6 @@
     fill: #FFF;
 }
 
-.works-school__heading {
-    font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
-    font-size: rem(35px);
-    margin: 0;
-    color: $darkolive;
-    &::before {
-        content: ' ';
-        width: rem(22px);
-        height: rem(5px);
-        background-color: $grey;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: rem(20px);
-        margin-bottom: rem(5px);
-    }
-    &::after {
-        content: ' ';
-        width: rem(22px);
-        height: rem(5px);
-        background-color: $grey;
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: rem(20px);
-        margin-bottom: rem(5px);
-    }
-}
-
-.works-school__heading-inactive {
-    &::before {
-        display: none;
-    }
-    &:after {
-        display: none;
-    }
-}
-
-.works-review__heading-inactive {
-    &::before {
-        display: none;
-    }
-    &:after {
-        display: none;
-    }
-}
-
 .works-sites__up {
     background: rgba(#b6b4ae, 0.7);
     display: flex;
@@ -194,11 +210,13 @@
 
 .works-sites {
     width: 50%;
+    max-height: rem(525px);
     height: rem(525px);
     background-color: #efebe0;
     display: flex;
     justify-content: center;
     @include tablets {
+        height: initial;
         order: 1;
         width: 100%;
     }
@@ -215,16 +233,9 @@
 }
 
 .works-sites__main-img {
-    padding-bottom: rem(55px);
-    padding-top: rem(65px);
-    @include netbooks {
-        width: 100%;
-        height: 100%;
-    }
-    @include tablets {
-        width: initial;
-        height: initial;
-    }
+    align-self: center;
+    width: 100%;
+    height: 100%;
 }
 
 .works-sites-slider__down {
@@ -295,6 +306,22 @@
     align-items: center;
     justify-content: center;
     margin-bottom: rem(70px);
+    @include phones {
+        flex-direction: column;
+    }
+}
+
+.heading-text__about-me {
+    color: $darkheading;
+    &::before {
+        margin-top: rem(40px);
+    }
+    &::after {
+        margin-top: rem(40px);
+        &:last-child {
+            content: none;
+        }
+    }
 }
 
 .works__review {
@@ -302,13 +329,28 @@
 }
 
 .work-review-row {
-    width: rem(380px);
+    width: 50%;
     display: inline-flex;
     flex-direction: column;
     vertical-align: top;
+    max-width: rem(380px);
     @include tablets {
         font-size: rem(14px);
-        width: rem(350px);
+        max-width: rem(350px);
+        padding-left: rem(5px);
+        padding-right: rem(5px);
+    }
+    @include phones {
+        width: 100%;
+        padding-left: rem(10px);
+        padding-right: rem(10px);
+    }
+}
+
+.review__icon {
+    @include phones {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -344,6 +386,9 @@
     margin-bottom: rem(70px);
     background: rgba($color: #FFF, $alpha: 0.5);
     text-align: center;
+    @include phones {
+        width: rem(300px);
+    }
 }
 
 .contact-me__container {
@@ -359,6 +404,7 @@
 .contact-me__buttons {
     display: flex;
     justify-content: center;
+    padding-top: 25px;
 }
 
 .contact-me__form-button {
@@ -387,6 +433,7 @@
 .works-form__heading {
     font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
     font-size: rem(35px);
+    line-height: rem(41px);
     color: $darkolive;
     &::before {
         content: ' ';
@@ -408,10 +455,17 @@
         margin-left: rem(20px);
         margin-bottom: rem(5px);
     }
+    @include tablets {
+        font-size: rem(30px);
+    }
+    @include phones {
+        font-size: rem(21px);
+        line-height: rem(41px);
+    }
 }
 
 .contact-me__form-input {
-    width: rem(340px);
+    width: 85%;
     height: rem(45px);
     border-radius: 5px;
     padding-left: rem(20px);
@@ -434,4 +488,9 @@
     justify-content: center;
     align-self: center;
     margin-bottom: rem(70px);
+}
+
+.fa-quote-left {
+    font-size: 28px;
+    color: #cfd4d5;
 }

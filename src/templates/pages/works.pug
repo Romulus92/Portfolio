@@ -28,12 +28,11 @@ block content
     section.works__portfolio
       .works-heading
         .works-heading__wrap
-          h1.works-heading__text Мои работы
+          h1.heading-text.heading-text__works Мои работы
       .works-container
         .works-school
           .works-school__container
-            h2.works-school__heading Сайт школы онлайн
-            h2.works-school__heading.works-school__heading-inactive Образования
+            h2.heading-text.heading-text__school Сайт школы онлайн Образования
             .works-school__skills
               .works-school__skills-text HTML , CSS, JAVASCRIPT
             .works-school__button
@@ -56,11 +55,11 @@ block content
       .works-reviews
         .works-heading.works-heading__about-me
             .works-heading__wrap.works-heading__wrap-about-me
-              h1.works-heading__text Что обо мне
-              h1.works-heading__text.works-review__heading-inactive говорят
+              h1.heading-text.heading-text__about-me Что обо мне говорят
         .works-reviews__container
           .work-review-row
             .review__icon
+              i.fas.fa-quote-left
             p.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
             .review-autor
               img.review-autor__img(src='assets/images/kovalchuk.png')
@@ -69,6 +68,7 @@ block content
                 span.review-autor__occup основатель Loftschool
           .work-review-row
             .review__icon
+              i.fas.fa-quote-left
             p.review__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
             .review-autor
               img.review-autor__img(src='assets/images/sabantsev.png')

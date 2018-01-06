@@ -23,8 +23,11 @@
     display: flex;
     align-items: center;
     margin-left: rem(30px);
-    margin-top: rem(16px);
+    margin-top: rem(28px);
     justify-content: flex-start;
+    @include phones {
+        margin-bottom: 0;
+    }
 }
 
 .socials__item-about {
@@ -100,12 +103,21 @@
 .about {
     display: flex;
     /* padding-bottom: rem(70px); */
+    @include tablets {
+        flex-direction: column;
+    }
 }
 
 .about__person {
     width: 50%;
     display: flex;
     background-color: #efeee9;
+    @include netbooks {
+        flex-direction: column;
+    }
+    @include tablets {
+        width: 100%;
+    }
 }
 
 .about__heading {
@@ -113,11 +125,15 @@
     display: flex;
     justify-content: center;
     font-family: 'Bernier Regular', Arial, Helvetica, sans-serif;
-    font-size: rem(34px);
     color: $darkolive;
+    @include netbooks {
+        width: 100%;
+    }
 }
 
 .about__heading-text {
+    font-size: rem(63px);
+    line-height: rem(66px);
     &::before {
         content: ' ';
         width: rem(22px);
@@ -143,6 +159,16 @@
 .about__desc {
     width: 50%;
     margin-right: rem(20px);
+    @include netbooks {
+        width: 100%;
+    }
+}
+
+.about__picture {
+    @include tablets {
+        padding-left: rem(80px);
+        padding-right: rem(80px);
+    }
 }
 
 .about__img {
@@ -179,12 +205,24 @@
 .about__text {
     color: $darkolive;
     font-family: 'Roboto Regular', Arial, Helvetica, sans-serif;
+    @include tablets {
+        padding-left: rem(80px);
+        padding-right: rem(80px);
+    }
+    @include phones {
+        padding-left: rem(10px);
+        padding-right: rem(10px);
+    }
 }
 
 .about__skills {
     width: 50%;
     background-color: #eeebdf;
     padding-left: rem(40px);
+    @include tablets {
+        padding-left: 0;
+        width: 100%;
+    }
 }
 
 .skills__desc {
@@ -235,6 +273,21 @@
 .skills__text {
     color: $darkolive;
     font-family: 'Roboto Regular', Arial, Helvetica, sans-serif;
+    @include tablets {
+        padding-left: rem(80px);
+        padding-right: rem(80px);
+    }
+    @include phones {
+        padding-left: rem(10px);
+        padding-right: rem(10px);
+    }
+}
+
+.skills-row {
+    margin-bottom: rem(45px);
+    @include tablets {
+        text-align: center;
+    }
 }
 
 .skills-row__title {
@@ -245,8 +298,13 @@
 
 .skills-row__list {
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    max-width: rem(640px);
+    margin-top: rem(20px);
+    //max-width: rem(640px);
+    @include tablets {
+        justify-content: space-evenly;
+    }
 }
 
 .skill {
@@ -255,6 +313,10 @@
     justify-content: center;
     align-items: center;
     margin-right: rem(40px);
+    margin-bottom: rem(5px);
+    @include tablets {
+        margin-right: 0;
+    }
 }
 
 .skill__title {
@@ -263,6 +325,7 @@
     color: $brightazure;
     position: absolute;
     text-align: center;
+    align-self: center;
 }
 
 .about__contacts {
@@ -308,6 +371,10 @@
     background: #e4f7f4;
     align-self: center;
     opacity: .85;
+    @include phones {
+        align-self: initial;
+        background: white;
+    }
 }
 
 .contacts-row {
@@ -328,7 +395,6 @@
 }
 
 .footer {
-    bottom: 0;
     height: rem(147px);
     width: 100%;
     background: #53595d;
@@ -339,10 +405,6 @@
     @include tablets {
         height: rem(240px);
     }
-}
-
-.footer_about {
-    position: absolute;
 }
 
 .footer__row {
@@ -366,7 +428,7 @@
     width: 100%;
     justify-content: flex-start;
     @include tablets {
-        justify-content: center;
+        justify-content: space-around;
     }
 }
 
@@ -381,7 +443,8 @@
         margin-right: 0;
     }
     @include tablets {
-        padding: 30px 0 20px 0;
+        padding: 20px 0 20px 0;
+        margin-right: 0;
     }
 }
 
@@ -391,6 +454,9 @@
     transition: all 0.3s ease-in-out;
     &:hover {
         color: #00bfa5;
+    }
+    @include phones {
+        font-size: rem(13px);
     }
 }
 
@@ -423,6 +489,8 @@
     width: 100%;
     font-family: 'Roboto Light', Arial, Helvetica, sans-serif;
     color: #888b8d;
+    margin-top: rem(5px);
+    margin-bottom: rem(5px);
     &-left {
         text-align: left;
     }
@@ -431,5 +499,8 @@
     }
     @include tablets {
         text-align: center;
+    }
+    @include phones {
+        margin: 0;
     }
 }
