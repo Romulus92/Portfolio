@@ -14,8 +14,17 @@
 }
 
 .header__container {
-    width: rem(1200px);
+    max-width: rem(1200px);
+    width: 100%;
     align-self: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(40px);
+}
+
+.blog__socials {
+    width: 100%;
+    align-self: flex-start;
 }
 
 .header__top_blog {
@@ -75,6 +84,9 @@
 .blog-sidebar {
     width: 27%;
     margin-right: rem(120px);
+    @include tablets {
+        display: none;
+    }
 }
 
 .blog-sidebar__item {
@@ -104,6 +116,11 @@
 
 .blog-articles {
     width: 55%;
+    @include tablets {
+        width: 100%;
+        padding-left: rem(25px);
+        padding-right: rem(25px);
+    }
 }
 
 .blog-articles__item {
@@ -134,4 +151,8 @@
     margin-top: rem(10px);
     margin-bottom: 0;
     margin-bottom: rem(20px);
+}
+
+.blog-articles__img {
+    width: 100%;
 }

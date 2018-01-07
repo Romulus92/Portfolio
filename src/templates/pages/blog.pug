@@ -7,21 +7,20 @@ block content
   .blog__wrapper
     section.header__blog
       .header__container
-        .header__top.header__top_blog
-          ul.socials.header__socials
-            each item in ["vk", "github"]
-              li.socials__item
-                a(href='' class="socials__link socials__link-white socials__link_" + item)
-                  svg(class='socials__link-img socials__link-img_' + item) 
-                    use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
-          .about__hamburger
-            svg.hamburger
-              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger")
-        .person
-          .person__picture
-            img.person__image(src="assets/images/razrab.png", alt="")
-          h1.blog__heading Блог
-          span.blog__desc Статьи которые я написал
+        ul.socials.header__socials.blog__socials
+          each item in ["vk", "github"]
+            li.socials__item
+              a(href='' class="socials__link socials__link-white socials__link_" + item)
+                svg(class='socials__link-img socials__link-img_' + item) 
+                  use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
+        .about__hamburger.blog__hamburger
+          svg.hamburger
+            use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger")
+      .person
+        .person__picture
+          img.person__image(src="assets/images/razrab.png", alt="")
+        h1.blog__heading Блог
+        span.blog__desc Статьи которые я написал
       .header__triangles
         svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
           polygon.left-triangle.left-triangle_blog(points="0,0   0,86   500.8,86   500.8,75.5")
