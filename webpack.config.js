@@ -5,12 +5,12 @@ const config = {
     output: {
         filename: 'bundle.js'
     },
-    plugins: [
+    /* plugins: [
         new UglifyJSPlugin({
             sourceMap: true
         })
-    ],
-    module: {
+    ], */
+    /* module: {
         rules: [{
             test: /\.js$/,
             enforce: "pre",
@@ -19,7 +19,7 @@ const config = {
                 fix: true
             }
         }]
-    }
+    } */
 };
 
 module.exports = config;

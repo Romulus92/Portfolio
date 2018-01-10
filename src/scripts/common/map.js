@@ -1,10 +1,6 @@
-/* const map = require('./common/map.js');
-const $ = require('jquery');
-
-map(); */
-
-function initMap() {
-    let map = new window.google.maps.Map(document.getElementById('map'), {
+module.exports = function initMap() {
+    let google = window.google.maps;
+    let map = new google.Map(document.getElementById('map'), {
         center: { lat: 54.755494, lng: 55.993119 },
         zoom: 14,
         disableDefaultUI: true,
