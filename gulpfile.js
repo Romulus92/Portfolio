@@ -40,8 +40,8 @@ const paths = {
         dest: 'build/assets/scripts/'
     },
     fonts: {
-        src: 'src/fonts/**/*.*',
-        dest: 'build/assets/fonts'
+        src: 'src/webfonts/**/*.*',
+        dest: 'build/assets/webfonts'
     },
     sprite: {
         src: 'src/sprites/**/*.png',

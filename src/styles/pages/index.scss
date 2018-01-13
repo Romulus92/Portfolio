@@ -2,28 +2,57 @@
     background: url("/assets/images/mountains.png") center center no-repeat;
     background-size: cover;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
-    vertical-align: middle;
+    justify-content: space-between;
 }
 
 .welcome__auto {
     display: flex;
     justify-content: flex-end;
+    position: relative;
+    padding-top: rem(24px);
+    @include phones {
+        justify-content: center;
+    }
 }
 
 .welcome__button {
     text-decoration: none;
     color: white;
     display: inline-flex;
-    height: rem(45px);
-    width: rem(180px);
     justify-content: center;
+    width: rem(180px);
+    height: rem(45px);
+    align-self: flex-end;
+    padding-bottom: rem(10px);
+    padding-right: rem(28px);
+    padding-left: rem(28px);
     border: 1px solid white;
     border-radius: 5px;
-    margin-top: rem(24px);
+    display: flex;
     margin-right: rem(100px);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: white;
+        color: #00bfa5;
+    }
+    @include netbooks {
+        margin-right: rem(20px);
+    }
+    @include tablets {
+        margin-right: rem(25px);
+    }
+    @include phones {
+        justify-content: center;
+        position: initial;
+        height: 40px;
+        width: 150px;
+        //margin-top: 10px;
+        margin-right: 0;
+    }
 }
 
 .welcome__button-text {
@@ -32,15 +61,32 @@
 }
 
 .welcome__block {
-    padding-top: rem(37px);
+    display: flex;
+    flex-direction: column;
     align-self: center;
+    align-content: space-between;
     text-align: center;
     width: rem(380px);
     height: rem(395px);
     background: rgba(255, 255, 255, 0.85);
-    position: relative;
     border-radius: rem(5px);
-    margin-top: rem(180px);
+    /* margin: auto; */
+    @include tablets {
+        width: rem(350px);
+    }
+    @include phones {
+        //position: absolute;
+        width: rem(300px);
+        //margin-top: 85px;
+    }
+}
+
+.welcome__block-container {
+    padding-top: rem(40px);
+    height: rem(350px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .socials {
@@ -48,23 +94,36 @@
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    align-items: center;
+    @include phones {
+        margin-bottom: rem(30px);
+    }
 }
 
-.social__item {
-    width: 100%;
-    height: 100%;
+.socials__item {
+    margin-right: rem(25px);
     display: flex;
     align-items: center;
+    &:last-child {
+        margin-right: 0;
+    }
 }
 
 .socials__link {
-    color: $socialazure;
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.socials__link-index {
+    fill: #00bfa5;
 }
 
 .socials__link-img_vk {
     width: rem(30px);
     height: rem(17px);
-    opacity: 0.85;
 }
 
 .socials__link-img_github {
@@ -73,26 +132,33 @@
 }
 
 .social__link-img {
-    opacity: 0.85;
+    opacity: 0.5;
     align-self: center;
 }
 
 .menu {
-    position: absolute;
     bottom: 0;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-self: flex-end;
+    border-radius: 5px;
 }
 
 .menu__item {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
     border-right: 2px solid $lightazure;
     background-color: rgba($azure, 0.85);
     transition: all 0.5s ease-in-out;
+    &:first-child {
+        border-radius: 0 0 0 5px;
+    }
     &:last-child {
-        border-right: none;
+        border-right: 0px;
+        border-radius: 0 0 5px 0;
     }
     &:hover {
         background-color: rgba($darkazure, 0.85)
@@ -111,12 +177,17 @@
 }
 
 .welcome__copyrights {
-    position: absolute;
     display: flex;
-    bottom: 0;
+    align-self: center;
     width: 100%;
-    margin-bottom: rem(40px);
+    height: rem(70px);
+    //margin-bottom: rem(40px);
     justify-content: center;
     font-family: 'Roboto Light', Arial, Helvetica, sans-serif;
     color: white;
+    @include phones {
+        text-align: center;
+        align-self: center;
+        max-width: 250px;
+    }
 }

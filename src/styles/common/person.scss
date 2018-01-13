@@ -6,10 +6,14 @@
     font-family: 'Roboto Medium', Arial, Helvetica, sans-serif;
     font-size: 28px;
     color: $darkolive;
-    margin-bottom: rem(10px);
+    margin: 0;
 }
 
-.person__desc {
+.person__desc-text {
     font-family: 'Roboto Regular', Arial, Helvetica, sans-serif;
     color: $lightgrey;
+}
+
+.person-desc {
+    margin-bottom: rem(35px);
 }

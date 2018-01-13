@@ -10,7 +10,7 @@ block content
         ul.socials.header__socials
           each item in ["vk", "github"]
             li.socials__item
-              a(href='' class="socials__link socials__link_" + item)
+              a(href='' class="socials__link socials__link-white socials__link_" + item)
                 svg(class='socials__link-img socials__link-img_' + item) 
                   use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
         .about__hamburger
@@ -28,38 +28,38 @@ block content
     section.works__portfolio
       .works-heading
         .works-heading__wrap
-          h1.works-heading__text Мои работы
-      .works-school
-        .works-school__container
-          h2.works-school__heading Сайт школы онлайн
-          h2.works-school__heading.works-school__heading-inactive Образования
-          .works-school__skills
-            .works-school__skills-text HTML , CSS, JAVASCRIPT
-          .works-school__button
-            .works-school__button-img
-              svg.link-img
-                use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#link")
-            span.works-school__button-text Посмотреть сайт
-      .works-sites
-        .works-sites__main
+          h1.heading-text.heading-text__works Мои работы
+      .works-container
+        .works-school
+          .works-school__container
+            h2.heading-text.heading-text__school Сайт школы онлайн Образования
+            .works-school__skills
+              .works-school__skills-text HTML , CSS, JAVASCRIPT
+            .works-school__button
+              .works-school__button-img
+                svg.link-img
+                  use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#link")
+              span.works-school__button-text Посмотреть сайт
+        .works-sites
           img.works-sites__main-img(src='assets/images/sites1.png')
-        .works-sites-slider.works-sites-slider__down
-          .works-sites__down
-            svg.arrow.arrow__down-portfolio
-              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down")
-        .works-sites-slider.works-sites-slider__up
-          .works-sites__up
-            svg.arrow.arrow__up-portfolio
-              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up")
+        .works-sites__other  
+          .works-sites-slider.works-sites-slider__down
+            .works-sites__down
+              svg.arrow.arrow__down-portfolio
+                use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_down")
+          .works-sites-slider.works-sites-slider__up
+            .works-sites__up
+              svg.arrow.arrow__up-portfolio
+                use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#portf_arrow_up")
     section.works__review
       .works-reviews
         .works-heading.works-heading__about-me
             .works-heading__wrap.works-heading__wrap-about-me
-              h1.works-heading__text Что обо мне
-              h1.works-heading__text.works-review__heading-inactive говорят
+              h1.heading-text.heading-text__about-me Что обо мне говорят
         .works-reviews__container
           .work-review-row
             .review__icon
+              i.fas.fa-quote-left
             p.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
             .review-autor
               img.review-autor__img(src='assets/images/kovalchuk.png')
@@ -68,6 +68,7 @@ block content
                 span.review-autor__occup основатель Loftschool
           .work-review-row
             .review__icon
+              i.fas.fa-quote-left
             p.review__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
             .review-autor
               img.review-autor__img(src='assets/images/sabantsev.png')
@@ -93,19 +94,25 @@ block content
         .footer
           .footer__row
             ul.footer-menu
-              each item in ['Мои Работы', 'Обо мне', 'Блог', 'Авторизация']
+              -
+                var menu = [
+                  ['Мои Работы', 'works.html'],
+                  ['Обо мне', 'about.html'],
+                  ['Блог','blog.html'],
+                  ['Авторизация', 'login.html'],
+                ]
+              each item in menu
                 li.footer-menu__item
-                  a.footer-menu__text #{item}
+                  a.footer-menu__text(href='' + item[1]) #{item[0]}
             ul.footer-socials
               each item in ["vk", "github"]
                 li.socials__item
-                  a(href='' class="socials__link socials__link_" + item + "_round")
+                  a(href='' class="socials__link socials__link-white socials__link_" + item + "_round")
                     svg(class='socials__link-img socials__link-img_' + item + "_round") 
                       use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item + "_round")
           .footer__row
             p.about__copyright.about__copyright-left Я разрабочтик из Уфы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
-            p.about__copyright.about__copyright-right © Роман Зайнуллин | создано с любовью в LoftSchool | 2017 
-                                      
+            p.about__copyright.about__copyright-right © Роман Зайнуллин | создано с любовью в LoftSchool | 2017
             
 
 

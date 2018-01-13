@@ -1,9 +1,17 @@
+//resolutions
+$netbooks: 1200px;
+$tablets: 768px;
+$phones: 480px;
+//styles
 @import "normalize";
+//common
+@import "common/fontawesome-all.scss";
 @import 'common/variables';
 @import "common/media";
 @import "common/fonts";
 @import "common/base";
 @import "common/person";
+//pages
 @import 'pages/index';
 @import 'pages/about';
 @import 'pages/works';

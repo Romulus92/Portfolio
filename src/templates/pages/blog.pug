@@ -7,21 +7,20 @@ block content
   .blog__wrapper
     section.header__blog
       .header__container
-        .header__top.header__top_blog
-          ul.socials.header__socials
-            each item in ["vk", "github"]
-              li.socials__item
-                a(href='' class="socials__link socials__link_" + item)
-                  svg(class='socials__link-img socials__link-img_' + item) 
-                    use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
-          .about__hamburger
-            svg.hamburger
-              use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger")
-        .person
-          .person__picture
-            img.person__image(src="assets/images/razrab.png", alt="")
-          h1.blog__heading Блог
-          span.blog__desc Статьи которые я написал
+        ul.socials.header__socials.blog__socials
+          each item in ["vk", "github"]
+            li.socials__item
+              a(href='' class="socials__link socials__link-white socials__link_" + item)
+                svg(class='socials__link-img socials__link-img_' + item) 
+                  use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item)
+        .about__hamburger.blog__hamburger
+          svg.hamburger
+            use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#hamburger")
+      .person
+        .person__picture
+          img.person__image(src="assets/images/razrab.png", alt="")
+        h1.blog__heading Блог
+        span.blog__desc Статьи которые я написал
       .header__triangles
         svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
           polygon.left-triangle.left-triangle_blog(points="0,0   0,86   500.8,86   500.8,75.5")
@@ -46,16 +45,24 @@ block content
               span.blog-articles__date #{article[1]}
               p.blog-articles__text Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
               p.blog-articles__text Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+              img.blog-articles__img(src='assets/images/code_exmpl.png')
       .footer
         .footer__row
           ul.footer-menu
-            each item in ['Мои Работы', 'Обо мне', 'Блог', 'Авторизация']
+            -
+              var menu = [
+                ['Мои Работы', 'works.html'],
+                ['Обо мне', 'about.html'],
+                ['Блог','blog.html'],
+                ['Авторизация', 'login.html'],
+              ]
+            each item in menu
               li.footer-menu__item
-                a.footer-menu__text #{item}
+                a.footer-menu__text(href='' + item[1]) #{item[0]}
           ul.footer-socials
             each item in ["vk", "github"]
               li.socials__item
-                a(href='' class="socials__link socials__link_" + item + "_round")
+                a(href='' class="socials__link socials__link-white socials__link_" + item + "_round")
                   svg(class='socials__link-img socials__link-img_' + item + "_round") 
                     use(xlink:href="assets/svg/symbol/svg/sprite.symbol.svg#" + item + "_round")
         .footer__row
